@@ -8,6 +8,7 @@ namespace Autoszerelo
         {
             Console.WriteLine("Hello Szerelő!");
             Console.WriteLine("Elromlott az autó!");
+            Console.WriteLine("Autó megjavítva");
         }
     }
 }
