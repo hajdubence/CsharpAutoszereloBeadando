@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\Autoszerelo\\AutoszerelőWebApi\\WebApi_Server\\WebApi_Server.csproj",
+      "projectUniqueName": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\AutoszerelőWebApi\\WebApi_Server\\WebApi_Server.csproj",
       "projectName": "WebApi_Server",
-      "projectPath": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\Autoszerelo\\AutoszerelőWebApi\\WebApi_Server\\WebApi_Server.csproj",
+      "projectPath": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\AutoszerelőWebApi\\WebApi_Server\\WebApi_Server.csproj",
       "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-      "outputPath": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\Autoszerelo\\AutoszerelőWebApi\\WebApi_Server\\obj\\",
+      "outputPath": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\AutoszerelőWebApi\\WebApi_Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\Autoszerelo\\AutoszerelőWebApi\\WebApi_Common\\WebApi_Common.csproj": {
-              "projectPath": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\Autoszerelo\\AutoszerelőWebApi\\WebApi_Common\\WebApi_Common.csproj"
+            "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\AutoszerelőWebApi\\WebApi_Common\\WebApi_Common.csproj": {
+              "projectPath": "C:\\D\\Egyetem\\C# programozás nagyválalati környezetben\\CsharpAutoszereloBeadando\\AutoszerelőWebApi\\WebApi_Common\\WebApi_Common.csproj"
             }
           }
         }
