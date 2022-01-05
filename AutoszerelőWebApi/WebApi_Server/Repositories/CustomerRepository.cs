@@ -1,28 +1,62 @@
 ﻿using System.Text.Json;
 using WebApi_Common.Models;
+using WebApi_Server.Properties;
 
 namespace WebApi_Server.Repositories
 {
     public static class CustomerRepository
     {
-        private const string filename = "Customer.json";
 
         public static IEnumerable<Customer> GetCustomers()
         {
-            if (File.Exists(filename))
+            using(var database = new CustomerContext())
             {
-                var rawData = File.ReadAllText(filename);
-                var customers = JsonSerializer.Deserialize<IEnumerable<Customer>>(rawData);
+                var customers = database.Customers.ToList();
+
                 return customers;
             }
-
-            return new List<Customer>();
         }
 
-        public static void StoreCustomers(IEnumerable<Customer> customers)
+        public static Customer GetCustomer(long id)
         {
-            var rawData = JsonSerializer.Serialize(customers);
-            File.WriteAllText(filename, rawData);
+            using (var database = new CustomerContext())
+            {
+                var customer = database.Customers.Where(c => c.Id == id).FirstOrDefault();
+
+                return customer;
+            }
+        }
+
+        public static void AddCustomer(Customer customer)
+        {
+            using (var database = new CustomerContext())
+            {
+                database.Customers.Add(customer);
+
+                database.SaveChanges();
+            }
+        }
+
+        public static void UpdateCustomer(Customer customer)
+        {
+            using (var database = new CustomerContext())
+            {
+                database.Customers.Update(customer);
+
+                database.SaveChanges();
+
+
+            }
+        }
+
+        public static void DeleteCustomer(Customer customer)
+        {
+            using (var database = new CustomerContext())
+            {
+                database.Customers.Remove(customer);
+
+                database.SaveChanges();
+            }
         }
     }
 }
