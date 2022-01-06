@@ -43,7 +43,6 @@ namespace AutoSzerelo_Client
         {
             if (true)
             {
-                _customer.Name = NameTextBox.Text;
                 _customer.Status = (Status)StatusComboBox.SelectedIndex;
 
                 CustomerDataProvider.UpdateCustomer(_customer, _customer.Id);
