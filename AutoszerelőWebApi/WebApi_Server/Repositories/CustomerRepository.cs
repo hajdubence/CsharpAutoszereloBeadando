@@ -11,7 +11,7 @@ namespace WebApi_Server.Repositories
         {
             using(var database = new CustomerContext())
             {
-                var customers = database.Customers.ToList();
+                var customers = database.Customers.OrderBy(c => c.DateOfRecording).ToList();
 
                 return customers;
             }

@@ -30,7 +30,16 @@ namespace WebApi_Common.Models
 
         public override string ToString()
         {
-            return $"{Name} {CarType} {LicensePlate} - {Problem} {DateOfRecording} {Status}";
+            switch (Status)
+            {
+                case Status.RecordedWork: return $"{Name} {CarType} {LicensePlate} - {Problem} {DateOfRecording} Felvett munka";
+
+                case Status.UnderConstruction: return $"{Name} {CarType} {LicensePlate} - {Problem} {DateOfRecording} Elvégzés alatt";
+
+                case Status.Finished: return $"{Name} {CarType} {LicensePlate} - {Problem} {DateOfRecording} Befejezett";
+
+                default: return $"{Name} {CarType} {LicensePlate} - {Problem} {DateOfRecording} {Status}";
+            }
         }
     }
 }
