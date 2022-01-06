@@ -31,6 +31,8 @@ namespace WebApi_Server.Controllers
         [HttpPost]
         public ActionResult Post([FromBody]Customer customer)
         {
+            customer.DateOfRecording = DateTime.Now;
+            customer.Status = Status.RecordedWork;
             CustomerRepository.AddCustomer(customer);
              
             return Ok();
