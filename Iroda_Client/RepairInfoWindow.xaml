@@ -1,0 +1,57 @@
+﻿<Window x:Class="Iroda_Client.RepairInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Iroda_Client"
+        mc:Ignorable="d"
+        Title="Munka adatok" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Ügyfél Neve" Margin="10"/>
+            <TextBox x:Name="CustomerNameTextBox" Grid.Row="0" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Autó típus" Margin="10"/>
+            <TextBox x:Name="CarTypeTextBox" Grid.Row="1" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Rendszám" Margin="10"/>
+            <TextBox x:Name="CarLicensePLateTextBox" Grid.Row="2" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Probléma" Margin="10"/>
+            <TextBox x:Name="ProblemTextBox" Grid.Row="3" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+
+            <Label Grid.Row="4" Grid.Column="0" Content="Felvétel ideje" Margin="10"/>
+            <DatePickerTextBox x:Name="DateOfRecordingTextBox" Grid.Row="4" Grid.Column="1" Margin="10 15 10 10" IsReadOnly="True"/>
+
+            <Label Grid.Row="5" Grid.Column="0" Content="Állapot" Margin="10"/>
+            <ComboBox x:Name="StatusComboBox"   Grid.Row="5" Grid.Column="1" Margin="10">
+                <ComboBoxItem Content="Felvett munka"></ComboBoxItem>
+                <ComboBoxItem Content="Elvégzés alatt"></ComboBoxItem>
+                <ComboBoxItem Content="Befejezett"></ComboBoxItem>
+            </ComboBox>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button x:Name="SaveButton" Content="Mentés" Width="80" Margin="10" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButton" Content="Mégse" Width="80" Margin="10" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

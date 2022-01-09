@@ -34,11 +34,11 @@ namespace Iroda_Client
 
             if (selectedRepair != null)
             {
-                /*var window = new RepairInfoWindow(selectedRepair);
+                var window = new RepairInfoWindow(selectedRepair);
                 if (window.ShowDialog() ?? false)
                 {
-                    RepairDataGrid_Update();
-                }*/
+                    UpdateRepairDataGrid();
+                }
 
                 RepairDataGrid.UnselectAll();
             }
@@ -49,11 +49,21 @@ namespace Iroda_Client
             UpdateRepairDataGrid();
         }
 
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new RepairInfoWindow(null);
+            if (window.ShowDialog() ?? false)
+            {
+                UpdateRepairDataGrid();
+            }
+        }
+
+
+
         private void UpdateRepairDataGrid()
         {
             var repairs = RepairDataProvider.GetRepairs().ToList();
             RepairDataGrid.DataContext = repairs;
         }
-
     }
 }
