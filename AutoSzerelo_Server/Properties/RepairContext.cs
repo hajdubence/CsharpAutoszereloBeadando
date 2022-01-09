@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
-using WebApi_Common.Models;
+using AutoSzerelo_Common.Models;
 
-namespace WebApi_Server.Properties
+namespace AutoSzerelo_Server.Properties
 {
-    public class CustomerContext : DbContext
+    public class RepairContext : DbContext
     {
 
-        public DbSet<Repair> Customers { get; set; }
+        public DbSet<Repair> Repairs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {

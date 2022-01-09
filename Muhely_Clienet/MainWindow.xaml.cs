@@ -1,4 +1,5 @@
-﻿using AutoSzerelo_Client.DataProviders;
+﻿using AutoSzerelo_Common.DataProviders;
+using AutoSzerelo_Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WebApi_Common.Models;
 
-namespace AutoSzerelo_Client
+namespace Muhely_Clienet
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,30 +25,30 @@ namespace AutoSzerelo_Client
         public MainWindow()
         {
             InitializeComponent();
-            UpdateCustomersListBox();
+            UpdateRepairsListBox();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            var selectedCustomer = CustomerListBox.SelectedItem as Repair;
+            var selectedRepair = RepairListBox.SelectedItem as Repair;
 
-            if (selectedCustomer != null)
+            if (selectedRepair != null)
             {
-                var window = new CustomerWindow(selectedCustomer);
-                if(window.ShowDialog() ?? false)
+                var window = new RepairInfoWindow(selectedRepair);
+                if (window.ShowDialog() ?? false)
                 {
-                    UpdateCustomersListBox();
+                    UpdateRepairsListBox();
                 }
 
-                CustomerListBox.UnselectAll();
+                RepairListBox.UnselectAll();
             }
 
         }
 
-        private void UpdateCustomersListBox()
+        private void UpdateRepairsListBox()
         {
-            var customers = CustomerDataProvider.GetCustomers().ToList();
-            CustomerListBox.ItemsSource = customers;    
+            var repairs = RepairDataProvider.GetRepairs().ToList();
+            RepairListBox.ItemsSource = repairs;
         }
     }
 }

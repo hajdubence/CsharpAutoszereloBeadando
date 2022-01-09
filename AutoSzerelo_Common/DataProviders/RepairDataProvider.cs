@@ -5,15 +5,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using WebApi_Common.Models;
+using AutoSzerelo_Common.Models;
 
-namespace AutoSzerelo_Client.DataProviders
+namespace AutoSzerelo_Common.DataProviders
 {
-    class CustomerDataProvider
+    public class RepairDataProvider
     {
-        private const string _url = "http://localhost:5000/api/customer";
+        private const string _url = "http://localhost:5000/api/repair";
 
-        public static IEnumerable<Repair> GetCustomers()
+        public static IEnumerable<Repair> GetRepairs()
         {
             using (var client = new HttpClient())
             {
@@ -22,19 +22,19 @@ namespace AutoSzerelo_Client.DataProviders
                 if (response.IsSuccessStatusCode)
                 {
                     var rawData = response.Content.ReadAsStringAsync().Result;
-                    var customers = JsonConvert.DeserializeObject<IEnumerable<Repair>>(rawData);
-                    return customers;
+                    var repairs = JsonConvert.DeserializeObject<IEnumerable<Repair>>(rawData);
+                    return repairs;
                 }
 
                 throw new InvalidOperationException(response.StatusCode.ToString());
             }
         }
 
-        public static void UpdateCustomer(Repair customer, long id)
+        public static void UpdateRepair(Repair repair, long id)
         {
             using (var client = new HttpClient())
             {
-                var rawData = JsonConvert.SerializeObject(customer);
+                var rawData = JsonConvert.SerializeObject(repair);
                 var content = new StringContent(rawData, Encoding.UTF8, "application/json");
 
                 var response = client.PutAsync($"{_url}/{id}", content).Result;

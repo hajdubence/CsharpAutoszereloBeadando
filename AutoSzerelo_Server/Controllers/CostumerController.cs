@@ -1,65 +1,65 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApi_Common.Models;
-using WebApi_Server.Repositories;
+using AutoSzerelo_Common.Models;
+using AutoSzerelo_Server.Repositories;
 
-namespace WebApi_Server.Controllers
-{   
+namespace AutoSzerelo_Server.Controllers
+{
     [ApiController]
-    [Route("api/customer")]
-    public class CostumerController:Controller
+    [Route("api/repair")]
+    public class CostumerController : Controller
     {
         [HttpGet]
         public ActionResult<IEnumerable<Repair>> Get()
         {
-            var customers = CustomerRepository.GetCustomers();
-            return Ok(customers);
+            var repairs = RepairRepository.GetRepairs();
+            return Ok(repairs);
         }
 
         [HttpGet("{id}")]
         public ActionResult<Repair> Get(int id)
         {
 
-            var customer = CustomerRepository.GetCustomer(id);
-            if (customer != null)
+            var repair = RepairRepository.GetRepair(id);
+            if (repair != null)
             {
-                return Ok(customer);
+                return Ok(repair);
             }
 
             return NotFound();
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody]Repair customer)
+        public ActionResult Post([FromBody] Repair repair)
         {
-            customer.DateOfRecording = DateTime.Now;
-            customer.Status = Status.RecordedWork;
-            CustomerRepository.AddCustomer(customer);
-             
+            repair.DateOfRecording = DateTime.Now;
+            repair.Status = Status.RecordedWork;
+            RepairRepository.AddRepair(repair);
+
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put([FromBody] Repair customer, long id)
+        public ActionResult Put([FromBody] Repair repair, long id)
         {
-            var dbCustomer = CustomerRepository.GetCustomer(id);
+            var dbRepair = RepairRepository.GetRepair(id);
 
-            if (dbCustomer !=null)
+            if (dbRepair != null)
             {
-                CustomerRepository.UpdateCustomer(customer);
+                RepairRepository.UpdateRepair(repair);
                 return Ok();
             }
 
             return NotFound();
-            
+
         }
 
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            var customer = CustomerRepository.GetCustomer(id);
-            if (customer != null)
-            { 
-                CustomerRepository.DeleteCustomer(customer);
+            var repair = RepairRepository.GetRepair(id);
+            if (repair != null)
+            {
+                RepairRepository.DeleteRepair(repair);
                 return Ok();
             }
 

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSzerelo_Server", "AutoSzerelo_Server\AutoSzerelo_Server.csproj", "{3EEE056C-AF37-4327-8665-1C9F1A7F1F57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSzerelo_Server", "AutoSzerelo_Server\AutoSzerelo_Server.csproj", "{58B91969-2746-42D8-B5B4-F0173208AC66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSzerelo_Common", "AutoSzerelo_Common\AutoSzerelo_Common.csproj", "{3AB26A19-5EA3-4787-9EE5-7DDCD13CA0CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSzerelo_Common", "AutoSzerelo_Common\AutoSzerelo_Common.csproj", "{B8681C3B-0CD4-4285-9982-42B8DB977021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muhely_Clienet", "Muhely_Clienet\Muhely_Clienet.csproj", "{E21C67AC-30A6-4F6E-AB81-EE1374E61A60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muhely_Clienet", "Muhely_Clienet\Muhely_Clienet.csproj", "{FA25C99A-D11F-4940-91BF-B89FC3AE2147}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3EEE056C-AF37-4327-8665-1C9F1A7F1F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EEE056C-AF37-4327-8665-1C9F1A7F1F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EEE056C-AF37-4327-8665-1C9F1A7F1F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EEE056C-AF37-4327-8665-1C9F1A7F1F57}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AB26A19-5EA3-4787-9EE5-7DDCD13CA0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AB26A19-5EA3-4787-9EE5-7DDCD13CA0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AB26A19-5EA3-4787-9EE5-7DDCD13CA0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AB26A19-5EA3-4787-9EE5-7DDCD13CA0CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E21C67AC-30A6-4F6E-AB81-EE1374E61A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E21C67AC-30A6-4F6E-AB81-EE1374E61A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E21C67AC-30A6-4F6E-AB81-EE1374E61A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E21C67AC-30A6-4F6E-AB81-EE1374E61A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B91969-2746-42D8-B5B4-F0173208AC66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B91969-2746-42D8-B5B4-F0173208AC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B91969-2746-42D8-B5B4-F0173208AC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B91969-2746-42D8-B5B4-F0173208AC66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8681C3B-0CD4-4285-9982-42B8DB977021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8681C3B-0CD4-4285-9982-42B8DB977021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8681C3B-0CD4-4285-9982-42B8DB977021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8681C3B-0CD4-4285-9982-42B8DB977021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA25C99A-D11F-4940-91BF-B89FC3AE2147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA25C99A-D11F-4940-91BF-B89FC3AE2147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA25C99A-D11F-4940-91BF-B89FC3AE2147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA25C99A-D11F-4940-91BF-B89FC3AE2147}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {038CB495-F3F0-4468-B5B8-918BDD5C3BC4}
+		SolutionGuid = {CB2B310A-9531-40F1-9CC6-7B70819DA41A}
 	EndGlobalSection
 EndGlobal

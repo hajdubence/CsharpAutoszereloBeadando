@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebApi_Common.Models
+namespace AutoSzerelo_Common.Models
 {
-    public enum Status 
+    public enum Status
     {
         RecordedWork,
         UnderRepair,

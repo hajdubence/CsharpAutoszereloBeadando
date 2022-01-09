@@ -10,7 +10,7 @@ namespace AutoSzerelo_Server.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "Repairs",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
@@ -24,14 +24,14 @@ namespace AutoSzerelo_Server.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.PrimaryKey("PK_Repairs", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Repairs");
         }
     }
 }
