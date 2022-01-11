@@ -53,7 +53,7 @@ namespace AutoSzerelo_Common.Models
         {
             if (String.IsNullOrWhiteSpace(CarType))
                 return false;
-            return Regex.IsMatch(CarType, "^[A-Za-z\\s]+$");
+            return Regex.IsMatch(CarType, "^[A-Za-z0-9\\s]+$");
         }
 
         public bool ValidateCarLicensePlate()

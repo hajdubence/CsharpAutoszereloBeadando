@@ -28,10 +28,10 @@ namespace Iroda_Client
 
             if (repair == null)
             {
-                CustomerNameTextBox.IsReadOnly = false;
-                CarTypeTextBox.IsReadOnly = false;
-                CarLicensePLateTextBox.IsReadOnly = false;
-                ProblemTextBox.IsReadOnly = false;
+                DateOfRecordingLabel.Visibility = Visibility.Collapsed;
+                DateOfRecordingTextBox.Visibility = Visibility.Collapsed;
+                StatusLabel.Visibility = Visibility.Collapsed;
+                StatusComboBox.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -47,31 +47,44 @@ namespace Iroda_Client
 
         public void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: validate
+            Repair validatedRepair = new Repair();
+            validatedRepair.CustomerName = CustomerNameTextBox.Text;
+            validatedRepair.CarType = CarTypeTextBox.Text;
+            validatedRepair.CarLicensePlate = CarLicensePLateTextBox.Text;
+            validatedRepair.Problem = ProblemTextBox.Text;
 
-            if (_repair == null)
-            {
-                _repair = new Repair();
-                _repair.CustomerName = CustomerNameTextBox.Text;
-                _repair.CarType = CarTypeTextBox.Text;
-                _repair.CarLicensePlate = CarLicensePLateTextBox.Text;
-                _repair.Problem = ProblemTextBox.Text;
-
-                RepairDataProvider.AddRepair(_repair);
-            }
+            if (!validatedRepair.ValidateCustomerName())
+                MessageBox.Show("Ügyfél neve nem lehet üres és nem tatalmazhat speciális karaktereket vagy számokat.",
+                    "Hibás adat", MessageBoxButton.OK, MessageBoxImage.Warning);
+            else if (!validatedRepair.ValidateCarType())
+                MessageBox.Show("Autó típusa nem lehet üres és nem tatalmazhat speciális karaktereket.",
+                    "Hibás adat", MessageBoxButton.OK, MessageBoxImage.Warning);
+            else if (!validatedRepair.ValidateCarLicensePlate())
+                MessageBox.Show("Rendszám nem lehet üres és a következö formátmunak kell lennie: XXX-000",
+                    "Hibás adat", MessageBoxButton.OK, MessageBoxImage.Warning);
+            else if (!validatedRepair.ValidateProblem())
+                MessageBox.Show("Probléma leírása nem lehet üres.",
+                    "Hibás adat", MessageBoxButton.OK, MessageBoxImage.Warning);
             else
             {
-                _repair.CustomerName = CustomerNameTextBox.Text;
-                _repair.CarType = CarTypeTextBox.Text;
-                _repair.CarLicensePlate = CarLicensePLateTextBox.Text;
-                _repair.Problem = ProblemTextBox.Text;
-                _repair.Status = (Status)StatusComboBox.SelectedIndex;
+                if (_repair == null)
+                {
+                    RepairDataProvider.AddRepair(validatedRepair);
+                }
+                else
+                {
+                    _repair.CustomerName = CustomerNameTextBox.Text;
+                    _repair.CarType = CarTypeTextBox.Text;
+                    _repair.CarLicensePlate = CarLicensePLateTextBox.Text;
+                    _repair.Problem = ProblemTextBox.Text;
+                    _repair.Status = (Status)StatusComboBox.SelectedIndex;
 
-                RepairDataProvider.UpdateRepair(_repair, _repair.Id);
+                    RepairDataProvider.UpdateRepair(_repair, _repair.Id);
+                }
+                DialogResult = true;
+                Close();
             }
-
-            DialogResult = true;
-            Close();
+            
         }
         public void CancelButton_Click(object sender, RoutedEventArgs e)
         {

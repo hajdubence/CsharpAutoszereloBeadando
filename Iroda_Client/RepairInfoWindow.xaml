@@ -26,22 +26,22 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" Content="Ügyfél Neve" Margin="10"/>
-            <TextBox x:Name="CustomerNameTextBox" Grid.Row="0" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+            <Label Grid.Row="0" Grid.Column="0" Content="Ügyfél neve" Margin="10"/>
+            <TextBox x:Name="CustomerNameTextBox" Grid.Row="0" Grid.Column="1" Margin="10"/>
 
             <Label Grid.Row="1" Grid.Column="0" Content="Autó típus" Margin="10"/>
-            <TextBox x:Name="CarTypeTextBox" Grid.Row="1" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+            <TextBox x:Name="CarTypeTextBox" Grid.Row="1" Grid.Column="1" Margin="10"/>
 
             <Label Grid.Row="2" Grid.Column="0" Content="Rendszám" Margin="10"/>
-            <TextBox x:Name="CarLicensePLateTextBox" Grid.Row="2" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+            <TextBox x:Name="CarLicensePLateTextBox" Grid.Row="2" Grid.Column="1" Margin="10"/>
 
             <Label Grid.Row="3" Grid.Column="0" Content="Probléma" Margin="10"/>
-            <TextBox x:Name="ProblemTextBox" Grid.Row="3" Grid.Column="1" Margin="10" IsReadOnly="True"/>
+            <TextBox x:Name="ProblemTextBox" Grid.Row="3" Grid.Column="1" Margin="10"/>
 
-            <Label Grid.Row="4" Grid.Column="0" Content="Felvétel ideje" Margin="10"/>
+            <Label x:Name="DateOfRecordingLabel" Grid.Row="4" Grid.Column="0" Content="Felvétel ideje" Margin="10"/>
             <DatePickerTextBox x:Name="DateOfRecordingTextBox" Grid.Row="4" Grid.Column="1" Margin="10 15 10 10" IsReadOnly="True"/>
 
-            <Label Grid.Row="5" Grid.Column="0" Content="Állapot" Margin="10"/>
+            <Label x:Name="StatusLabel" Grid.Row="5" Grid.Column="0" Content="Állapot" Margin="10" Visibility="Visible"/>
             <ComboBox x:Name="StatusComboBox"   Grid.Row="5" Grid.Column="1" Margin="10">
                 <ComboBoxItem Content="Felvett munka"></ComboBoxItem>
                 <ComboBoxItem Content="Elvégzés alatt"></ComboBoxItem>
