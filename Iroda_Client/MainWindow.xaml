@@ -38,7 +38,7 @@
                 <DataGridTextColumn Header="Rendszám" Binding="{Binding CarLicensePlate}"/>
                 <DataGridTextColumn Header="Probléma" Binding="{Binding Problem}"/>
                 <DataGridTextColumn Header="Felvétel ideje" Binding="{Binding DateOfRecording}"/>
-                <DataGridTextColumn Header="Állapot" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Állapot" Binding="{Binding StatusString}"/>
             </DataGrid.Columns>
         </DataGrid>
         

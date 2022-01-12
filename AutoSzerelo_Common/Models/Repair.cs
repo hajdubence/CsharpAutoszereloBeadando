@@ -28,12 +28,28 @@ namespace AutoSzerelo_Common.Models
         public string Problem { get; set; }
         public DateTime DateOfRecording { get; set; }
         public Status Status { get; set; }
+        public string StatusString
+        {
+            get {
+                switch (Status)
+                {
+                    case Status.RecordedWork:
+                        return "Felvett munka";
+                    case Status.UnderRepair:
+                        return "Elvégzés alatt";
+                    case Status.Finished:
+                        return "Befejezett";
+                    default:
+                        return "";
+                }
+            }
+        }
 
         public override string ToString()
         {
             switch (Status)
             {
-                case Status.RecordedWork: return $"{CustomerName} {CarType} {CarLicensePlate} - {Problem} {DateOfRecording} Felvett munka";
+                case Status.RecordedWork:return $"{CustomerName} {CarType} {CarLicensePlate} - {Problem} {DateOfRecording} Felvett munka";
 
                 case Status.UnderRepair: return $"{CustomerName} {CarType} {CarLicensePlate} - {Problem} {DateOfRecording} Elvégzés alatt";
 
