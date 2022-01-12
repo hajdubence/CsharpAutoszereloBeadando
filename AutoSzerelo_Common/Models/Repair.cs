@@ -46,21 +46,21 @@ namespace AutoSzerelo_Common.Models
         public bool ValidateCustomerName() {
             if (String.IsNullOrWhiteSpace(CustomerName))
                 return false;
-            return Regex.IsMatch(CustomerName, "^[A-Za-z\\s]+$");
+            return Regex.IsMatch(CustomerName, "^[\\p{L} ]+$");
         }
 
         public bool ValidateCarType()
         {
             if (String.IsNullOrWhiteSpace(CarType))
                 return false;
-            return Regex.IsMatch(CarType, "^[A-Za-z0-9\\s]+$");
+            return Regex.IsMatch(CarType, "^[\\p{L}0-9 ]+$");
         }
 
         public bool ValidateCarLicensePlate()
         {
             if (String.IsNullOrWhiteSpace(CarLicensePlate))
                 return false;
-            if (Regex.IsMatch(CarLicensePlate, "^[A-Z]{3}[-][0-9]{3}$"))
+            if (Regex.IsMatch(CarLicensePlate, "^[A-Z]{3}-[0-9]{3}$"))
                 return true;
             return false;
         }

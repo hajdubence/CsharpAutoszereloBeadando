@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoSzerelo_Common", "AutoS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Muhely_Clienet", "Muhely_Clienet\Muhely_Clienet.csproj", "{FA25C99A-D11F-4940-91BF-B89FC3AE2147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iroda_Client", "Iroda_Client\Iroda_Client.csproj", "{D0DFCDEA-5D3A-4045-83BC-F0EE62C1464C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iroda_Client", "Iroda_Client\Iroda_Client.csproj", "{D0DFCDEA-5D3A-4045-83BC-F0EE62C1464C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSzerelo_Common.Tests", "AutoSzerelo_Common.Tests\AutoSzerelo_Common.Tests.csproj", "{D7011846-4275-4943-9FFD-9929943B21F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D0DFCDEA-5D3A-4045-83BC-F0EE62C1464C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0DFCDEA-5D3A-4045-83BC-F0EE62C1464C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0DFCDEA-5D3A-4045-83BC-F0EE62C1464C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7011846-4275-4943-9FFD-9929943B21F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7011846-4275-4943-9FFD-9929943B21F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7011846-4275-4943-9FFD-9929943B21F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7011846-4275-4943-9FFD-9929943B21F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
