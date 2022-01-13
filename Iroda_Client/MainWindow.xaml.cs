@@ -40,11 +40,11 @@ namespace Iroda_Client
                     UpdateRepairDataGrid();
                 }
 
-                RepairDataGrid.UnselectAll();
+                RepairDataGrid.UnselectAllCells();
             }
 
         }
-        public void UpdateButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateRepairDataGrid();
         }
@@ -57,6 +57,8 @@ namespace Iroda_Client
                 UpdateRepairDataGrid();
             }
         }
+
+
 
 
 

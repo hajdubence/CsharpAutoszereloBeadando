@@ -32,6 +32,7 @@ namespace Iroda_Client
                 DateOfRecordingTextBox.Visibility = Visibility.Collapsed;
                 StatusLabel.Visibility = Visibility.Collapsed;
                 StatusComboBox.Visibility = Visibility.Collapsed;
+                DeleteButton.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -89,6 +90,16 @@ namespace Iroda_Client
         public void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        public void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Biztosan törli?", "Törlés", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                RepairDataProvider.DeleteRepair(_repair.Id);
+                DialogResult = true;
+                Close();
+            }
         }
 
     }

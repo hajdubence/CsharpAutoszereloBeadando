@@ -51,6 +51,7 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <Button x:Name="SaveButton" Content="Mentés" Width="80" Margin="10" Click="SaveButton_Click"/>
+            <Button x:Name="DeleteButton" Content="Töröl" Width="80" Margin="10" Click="DeleteButton_Click"/>
             <Button x:Name="CancelButton" Content="Mégse" Width="80" Margin="10" Click="CancelButton_Click"/>
         </StackPanel>
     </Grid>
