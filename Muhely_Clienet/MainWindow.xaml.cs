@@ -25,30 +25,35 @@ namespace Muhely_Clienet
         public MainWindow()
         {
             InitializeComponent();
-            UpdateRepairsListBox();
+            UpdateRepairDataGrid();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        private void RepairDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            var selectedRepair = RepairListBox.SelectedItem as Repair;
+            var selectedRepair = RepairDataGrid.SelectedItem as Repair;
 
             if (selectedRepair != null)
             {
                 var window = new RepairInfoWindow(selectedRepair);
                 if (window.ShowDialog() ?? false)
                 {
-                    UpdateRepairsListBox();
+                    UpdateRepairDataGrid();
                 }
 
-                RepairListBox.UnselectAll();
+                RepairDataGrid.UnselectAllCells();
             }
 
         }
 
-        private void UpdateRepairsListBox()
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateRepairDataGrid();
+        }
+
+        private void UpdateRepairDataGrid()
         {
             var repairs = RepairDataProvider.GetRepairs().ToList();
-            RepairListBox.ItemsSource = repairs;
+            RepairDataGrid.DataContext = repairs;
         }
     }
 }

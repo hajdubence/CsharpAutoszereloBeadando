@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Iroda_Client
+namespace AutoSzerelo_WPF_Common.View
 {
     // Tutorial: https://www.codeproject.com/Articles/683429/Guide-to-WPF-DataGrid-Formatting-Using-Bindings
-    class StatusToForegroundConverter : IValueConverter
+    public class StatusToForegroundConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AutoSzerelo_Common\AutoSzerelo_Common.csproj" />
+    <ProjectReference Include="..\AutoSzerelo_WPF_Common\AutoSzerelo_WPF_Common.csproj" />
   </ItemGroup>
 
 </Project>
