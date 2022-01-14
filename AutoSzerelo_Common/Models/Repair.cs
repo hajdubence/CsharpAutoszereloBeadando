@@ -28,9 +28,10 @@ namespace AutoSzerelo_Common.Models
         public string Problem { get; set; }
         public DateTime DateOfRecording { get; set; }
         public Status Status { get; set; }
-        public string StatusString
+        public string StatusToString
         {
-            get {
+            get
+            {
                 switch (Status)
                 {
                     case Status.RecordedWork:
@@ -44,18 +45,11 @@ namespace AutoSzerelo_Common.Models
                 }
             }
         }
-
-        public override string ToString()
+        public string DateOfRecordingToString
         {
-            switch (Status)
+            get
             {
-                case Status.RecordedWork:return $"{CustomerName} {CarType} {CarLicensePlate} - {Problem} {DateOfRecording} Felvett munka";
-
-                case Status.UnderRepair: return $"{CustomerName} {CarType} {CarLicensePlate} - {Problem} {DateOfRecording} Elvégzés alatt";
-
-                case Status.Finished: return $"{CustomerName} {CarType} {CarLicensePlate} - {Problem} {DateOfRecording} Befejezett";
-
-                default: return $"{CustomerName} {CarType} {CarLicensePlate} - {Problem} {DateOfRecording} {Status}";
+                return DateOfRecording.ToString();
             }
         }
 

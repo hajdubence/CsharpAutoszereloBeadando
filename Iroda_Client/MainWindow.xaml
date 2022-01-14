@@ -4,27 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Iroda_Client"
-        xmlns:common="clr-namespace:AutoSzerelo_WPF_Common.View;assembly=AutoSzerelo_WPF_Common"
+        xmlns:converters="clr-namespace:AutoSzerelo_WPF_Common.Converters;assembly=AutoSzerelo_WPF_Common"
         mc:Ignorable="d"
-        Title="Iroda kliens" Height="450" Width="800">
+        Title="Iroda kliens" Height="500" Width="900">
     
     <Window.Resources>
         <ResourceDictionary>
-            <RoutedUICommand x:Key="Ctr1" Text="Another Text" />
-            <common:StatusToForegroundConverter x:Key="StatusToForegroundConverter"/>
+            <RoutedUICommand x:Key="KeyF5" Text="Another Text" />
+            <converters:StatusToForegroundColorConverter x:Key="StatusToForegroundColorConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     
     <Window.InputBindings>
-        <KeyBinding Command="{StaticResource Ctr1}" Key="F5"></KeyBinding>
+        <KeyBinding Command="{StaticResource KeyF5}" Key="F5"></KeyBinding>
     </Window.InputBindings>
 
     <Window.CommandBindings>
-        <CommandBinding Command="{StaticResource Ctr1}" Executed="UpdateButton_Click" />
+        <CommandBinding Command="{StaticResource KeyF5}" Executed="UpdateButton_Click" />
     </Window.CommandBindings>
 
     <Grid>
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -33,18 +32,28 @@
 
         <Label Grid.Row="0" Content="Felvett munkák" FontWeight="Bold" Margin="15, 15, 15, 0"/>
 
-        <DataGrid x:Name="RepairDataGrid" Grid.Row="1" Margin="15" IsReadOnly="True" CanUserResizeRows="False" SelectionChanged="RepairDataGrid_SelectionChanged" ItemsSource="{Binding}" AutoGenerateColumns="False">
+        <DataGrid x:Name="RepairDataGrid"
+                  Grid.Row="1"
+                  Margin="15"
+                  IsReadOnly="True"
+                  CanUserResizeRows="False"
+                  SelectionChanged="RepairDataGrid_SelectionChanged"
+                  ItemsSource="{Binding}"
+                  AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*" Header="Ügyfél neve" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Width="1*" Header="Autó típus" Binding="{Binding CarType}"/>
                 <DataGridTextColumn Width="1*" Header="Rendszám" Binding="{Binding CarLicensePlate}"/>
                 <DataGridTextColumn Width="2*" Header="Probléma" Binding="{Binding Problem}"/>
-                <DataGridTextColumn Width="1*" Header="Felvétel ideje" Binding="{Binding DateOfRecording}"/>
-                <DataGridTextColumn Width="1*" Header="Állapot" Binding="{Binding StatusString}"/>
+                <DataGridTextColumn Width="1*" Header="Felvétel ideje" Binding="{Binding DateOfRecordingToString}"/>
+                <DataGridTextColumn Width="1*" Header="Állapot" Binding="{Binding StatusToString}"/>
             </DataGrid.Columns>
+            
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
-                    <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=Item.Status, Converter={StaticResource StatusToForegroundConverter}}"/>
+                    <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self},
+                                                                  Path=Item.Status,
+                                                                  Converter={StaticResource StatusToForegroundColorConverter}}"/>
                 </Style>
             </DataGrid.RowStyle>
         </DataGrid>

@@ -22,6 +22,7 @@ namespace Iroda_Client
     public partial class RepairInfoWindow : Window
     {
         private Repair _repair;
+
         public RepairInfoWindow(Repair repair)
         {
             InitializeComponent();
@@ -87,6 +88,7 @@ namespace Iroda_Client
             }
             
         }
+
         public void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Close();

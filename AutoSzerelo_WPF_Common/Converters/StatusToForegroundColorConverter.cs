@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace AutoSzerelo_WPF_Common.View
+namespace AutoSzerelo_WPF_Common.Converters
 {
     // Tutorial: https://www.codeproject.com/Articles/683429/Guide-to-WPF-DataGrid-Formatting-Using-Bindings
-    public class StatusToForegroundConverter : IValueConverter
+    public class StatusToForegroundColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((Status)value == Status.Finished)
+            {
                 return new SolidColorBrush(Color.FromRgb(150, 150, 150));
+            }
+
             return new SolidColorBrush(Color.FromRgb(0, 0, 0));
         }
 

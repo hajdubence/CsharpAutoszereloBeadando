@@ -10,4 +10,8 @@
     <ProjectReference Include="..\AutoSzerelo_Common\AutoSzerelo_Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
